@@ -120,7 +120,7 @@ public class InputActivity extends AppCompatActivity {
     }
 
     private void setErrorEmpry(EditText editText) {
-        editText.setError(((TextInputLayout) editText.getParent().getParent()).getHint() + "Belum diisi");
+        editText.setError(((TextInputLayout) editText.getParent()).getHint() + "Belum diisi");
     }
 
 
