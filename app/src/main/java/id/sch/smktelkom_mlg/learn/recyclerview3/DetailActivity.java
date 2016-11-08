@@ -18,17 +18,6 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
-
-        Hotel hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
-        setTitle(hotel.judul);
-        ImageView ivFoto = (ImageView) findViewById(R.id.imageFoto);
-        ivFoto.setImageURI(Uri.parse(hotel.foto));
-        TextView tvDeskripsi = (TextView) findViewById(R.id.place_detail);
-        tvDeskripsi.setText(hotel.deskripsi + "\n\n" + hotel.detail);
-        TextView tvLokasi = (TextView) findViewById(R.id.place_location);
-        tvLokasi.setText(hotel.lokasi);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -40,6 +29,16 @@ public class DetailActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Hotel hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
+        setTitle(hotel.judul);
+        ImageView ivFoto = (ImageView) findViewById(R.id.imageFoto);
+        ivFoto.setImageURI(Uri.parse(hotel.foto));
+        TextView tvDeskripsi = (TextView) findViewById(R.id.place_detail);
+        tvDeskripsi.setText(hotel.deskripsi + "\n\n" + hotel.detail);
+        TextView tvLokasi = (TextView) findViewById(R.id.place_location);
+        tvLokasi.setText(hotel.lokasi);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
